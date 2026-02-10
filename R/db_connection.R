@@ -2,7 +2,7 @@ library(DBI)
 library(RPostgres)
 
 create_connection <- function() {
-  conn <- dbConnect(
+  conn <- DBI::dbConnect(
     RPostgres::Postgres(),
     dbname = Sys.getenv("PGDATABASE"),
     host   = Sys.getenv("PGHOST"),
