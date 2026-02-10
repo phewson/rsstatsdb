@@ -42,6 +42,7 @@ END IF;
 #'
 #' @param df A data frame containing table, field_name and label
 #' @return A long string encoding all enums
+#' @export
 generate_all_enum_sql <- function(df) {
   chunks <- df |>
       group_by(table, field_name) |>
@@ -65,6 +66,7 @@ END $$;
 #' table, field_name. The latter is the name of the enums to be
 #' dropped.
 #' @return SQL
+#' @export
 generate_all_enum_drop_sql <- function(df) {
 
   fields <- df |>
