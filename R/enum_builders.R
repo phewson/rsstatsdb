@@ -50,7 +50,7 @@ generate_all_enum_sql <- function(df) {
     summarise(
       sql = generate_enum_sql(first(field_name), label),
       .groups = "drop")
-  glue("
+  glue::glue("
 DO $$
 BEGIN
 {paste(chunks$sql, collapse = '\n')}
@@ -77,11 +77,11 @@ generate_all_enum_drop_sql <- function(df) {
       .groups = "drop"
     )
 
-  drop_statements <- glue(
+  drop_statements <- glue::glue(
     "DROP TYPE IF EXISTS dft.{fields$type_name} CASCADE;"
   )
 
-  glue("
+  glue::glue("
 DO $$
 BEGIN
 {paste(drop_statements, collapse = '\n')}

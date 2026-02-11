@@ -1,0 +1,71 @@
+dataset: stats19_metadata
+comment: Some of the metadata have field_name longer than 63 bytes, this proposes
+         an alternative naming for those enums
+download_date: '2026-02-11'
+source: DfT Stats19
+notes: Generated from 2024 metadata
+columns:
+- table: collision
+  field_name: first_road_number
+  code: '0'
+  label_override: C or U
+- table: collision
+  field_name: second_road_number
+  code: '0'
+  label_override: C or U
+- table: collision
+  field_name: pedestrian_crossing_physical_facilities_historic
+  code: '4'
+  label_override: Non-junction light crossing
+- table: collision
+  field_name: did_police_officer_attend_scene_of_collision
+  code: '3'
+  label_override: No; self-report form
+- table: collision
+  field_name: did_police_officer_attend_scene_of_accident
+  code: '3'
+  label_override: No; self-report form
+- table: collision
+  field_name: carriageway_hazards
+  code: '12'
+  label_override: Sign/Marks defective or obscured
+- table: collision
+  field_name: pedestrian_crossing
+  code: '14'
+  label_override: Non-junction light crossing
+- table: casualty
+  field_name: pedestrian_movement
+  code: '6'
+  label_override: Not crossing masked by parked car
+- table: casualty
+  field_name: pedestrian_location
+  code: '8'
+  label_override: Centre without facilty
+- table: casualty
+  field_name: casualty_distance_banding
+  code: '4'
+  label_override: 20-100km
+- table: casualty
+  field_name: casualty_distance_banding
+  code: '3'
+  label_override: 10-20km
+- table: casualty
+  field_name: casualty_distance_banding
+  code: '2'
+  label_override: 5-10km
+- table: casualty
+  field_name: pedestrian_movement
+  code: '5'
+  label_override: In carriageway not crossing
+- table: vehicle
+  field_name: driver_distance_banding
+  code: '4'
+  label_override: 20-100km
+- table: vehicle
+  field_name: driver_distance_banding
+  code: '3'
+  label_override: 10-20km
+- table: vehicle
+  field_name: driver_distance_banding
+  code: '2'
+  label_override: 5-10km
