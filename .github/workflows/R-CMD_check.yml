@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages(c('devtools','roxygen2','testthat','purrr','glue','tibble','yaml','readr','dplyr'))
+          Rscript -e "install.packages(c('devtools','roxygen2','testthat','purrr','glue','tibble','yaml','readr','dplyr'))"
 
       - name: Install package
         run: R CMD build . && R CMD INSTALL *.tar.gz
