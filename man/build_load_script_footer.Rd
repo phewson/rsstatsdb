@@ -6,6 +6,11 @@
 \usage{
 build_load_script_footer(pg_table, year = 2024)
 }
+\arguments{
+\item{pg_table}{name of loading table}
+
+\item{year}{Latest year of available data}
+}
 \description{
 Generates the part of the bash script that:
 \itemize{

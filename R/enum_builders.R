@@ -1,3 +1,5 @@
+utils::globalVariables(c("field_name", "label", "n"))
+
 #' Add an SQL (single) quote
 #'
 #' Adds an SQL style quotation
@@ -15,6 +17,7 @@ sql_quote <- function(x) {
 #' @param field The name of the variable to be enummed
 #' @param values The values of the enum
 #' @param schema The schema to store the enum
+#' @param prefix the data prefix (group name)
 #' @return A multiline string which should be valid sql
 generate_enum_sql <- function(field, values, schema = "dft", prefix = "stats19") {
   enum_name <- paste(prefix, field, sep = "_")
@@ -43,6 +46,7 @@ END IF;
 #' @param df A data frame containing table, field_name and label
 #' @return A long string encoding all enums
 #' @export
+#' @importFrom dplyr filter summarise group_by first
 generate_all_enum_sql <- function(df) {
   chunks <- df |>
       group_by(table, field_name) |>
@@ -67,6 +71,7 @@ END $$;
 #' dropped.
 #' @return SQL
 #' @export
+#' @importFrom dplyr filter summarise group_by first
 generate_all_enum_drop_sql <- function(df) {
 
   fields <- df |>

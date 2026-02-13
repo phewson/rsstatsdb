@@ -38,6 +38,8 @@ build_load_script_header <- function(file_name, file_folder) {
 #' - Copies CSV data into landing table
 #' - Calls database promote function
 #'
+#' @param pg_table name of loading table
+#' @param year Latest year of available data
 build_load_script_footer <- function(pg_table, year=2024) {
     paste("echo \"\\copy staging.dft_", pg_table, " FROM $INPUT delimiter ',' csv header;\"\n",
           "echo \"SELECT dft.import_dft_", pg_table, "_", year, "();\"\n",

@@ -1,2 +1,5 @@
 ^LICENSE\.md$
 ^README\.Rmd$
+^.*\.sh$
+^.*\.sql$
+^schemas/.*\.sql$   # if you keep generated schema SQL there

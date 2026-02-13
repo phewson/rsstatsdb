@@ -12,6 +12,8 @@ generate_enum_sql(field, values, schema = "dft", prefix = "stats19")
 \item{values}{The values of the enum}
 
 \item{schema}{The schema to store the enum}
+
+\item{prefix}{the data prefix (group name)}
 }
 \value{
 A multiline string which should be valid sql
