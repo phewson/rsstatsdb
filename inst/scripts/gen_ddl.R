@@ -67,7 +67,7 @@ writeLines(build_loading_ddl("stats19_casualties", casualty_names, name_map, CAS
 writeLines(build_loading_ddl("stats19_vehicles", vehicle_names, name_map, VEHICLE_DATA),
            con = "import_stats19_vehicles.sh")
 
-promote_colllisions <- generate_promotion_sql(read_schema_yaml("inst/schemas/stats19_collision.yml"),
+promote_collisions <- generate_promotion_sql(read_schema_yaml("inst/schemas/stats19_collision.yml"),
                                              build_column_select_sql,
                                              build_join_sql, "collision", psql_schema = "dft")
 writeLines(promote_collisions, con = "dft_stats19_collisions.sql")
@@ -78,11 +78,11 @@ promote_vehicles <- generate_promotion_sql(read_schema_yaml("inst/schemas/stats1
 writeLines(promote_vehicles, con = "dft_stats19_vehicles.sql")
 
 
-colllisions_ddl <- generate_table_ddl_from_yaml <- function(read_schema_yaml("inst/schemas/stats19_collision.yml"),pg_schema = "dft")
+collisions_ddl <- generate_table_ddl_from_yaml("inst/schemas/stats19_collision.yml",pg_schema = "dft")
 writeLines(collisions_ddl, con = "ddl_dft_stats19_collisions.sql")
-casualties_ddl <- generate_table_ddl_from_yaml <- function(read_schema_yaml("inst/schemas/stats19_casualty.yml"),pg_schema = "dft")
+casualties_ddl <- generate_table_ddl_from_yaml("inst/schemas/stats19_casualty.yml",pg_schema = "dft")
 writeLines(collisions_ddl, con = "ddl_dft_stats19_casualties.sql")
-vehicles_ddl <- generate_table_ddl_from_yaml <- function(read_schema_yaml("inst/schemas/stats19_vehicle.yml"),pg_schema = "dft")
+vehicles_ddl <- generate_table_ddl_from_yaml("inst/schemas/stats19_vehicle.yml",pg_schema = "dft")
 writeLines(vehicles_ddl, con = "ddl_dft_stats19_vehicle.sql")
 
 

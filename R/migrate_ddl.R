@@ -19,7 +19,7 @@
 #' }
 #'
 #' @export
-generate_table_ddl_from_yaml <- function(yaml_file,pg_schema = "dft") {
+generate_table_ddl_from_yaml <- function(yaml_file, pg_schema = "dft") {
   schema_tbl <- read_schema_yaml(yaml_file)
   meta <- attr(schema_tbl, "schema_metadata")
   table_name <- meta$dataset
