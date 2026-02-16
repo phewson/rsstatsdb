@@ -22,7 +22,6 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-            devtools
             roxygen2
             testthat
             purrr
@@ -33,6 +32,7 @@ jobs:
             dplyr
             DBI
             RPostgres
+          install-suggests: false
   
       - name: Install package
         run: R CMD build . && R CMD INSTALL *.tar.gz
@@ -41,4 +41,4 @@ jobs:
         run: R CMD check *.tar.gz --no-manual --as-cran
 
       - name: Run unit tests
-        run: Rscript -e "devtools::test()"
+        run: Rscript -e "testthat::test_local()"
