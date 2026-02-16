@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies  
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
+          dependencies: '"hard"'
           extra-packages: |
             roxygen2
             testthat
@@ -32,8 +33,7 @@ jobs:
             dplyr
             DBI
             RPostgres
-          install-suggests: false
-  
+   
       - name: Install package
         run: R CMD build . && R CMD INSTALL *.tar.gz
 
