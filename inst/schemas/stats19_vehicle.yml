@@ -1,5 +1,5 @@
 dataset: stats19_vehicle
-download_date: '2026-02-11'
+download_date: '2026-02-16'
 source: DfT Stats19
 notes: Generated from 2024 metadata
 columns:
@@ -9,60 +9,75 @@ columns:
 - field: vehicle_reference
   strategy: cast
   target: int
-- field: casualty_reference
+- field: vehicle_type
   strategy: cast
   target: int
-- field: casualty_class
+- field: towing_and_articulation
   strategy: enum
-  target: dft.stats19_casualty_class
-- field: sex_of_casualty
-  strategy: enum
-  target: dft.stats19_sex_of_casualty
-- field: age_of_casualty
+  target: dft.stats19_towing_and_articulation
+- field: vehicle_manoeuvre_historic
   strategy: cast
   target: int
-- field: age_band_of_casualty
-  strategy: enum
-  target: dft.stats19_age_band_of_casualty
-- field: casualty_severity
-  strategy: enum
-  target: dft.stats19_casualty_severity
-- field: pedestrian_location
-  strategy: enum
-  target: dft.stats19_pedestrian_location
-- field: pedestrian_movement
-  strategy: enum
-  target: dft.stats19_pedestrian_movement
-- field: car_passenger
-  strategy: enum
-  target: dft.stats19_car_passenger
-- field: bus_or_coach_passenger
-  strategy: enum
-  target: dft.stats19_bus_or_coach_passenger
-- field: pedestrian_road_maintenance_worker
-  strategy: enum
-  target: dft.stats19_pedestrian_road_maintenance_worker
-- field: casualty_type
+- field: vehicle_manoeuvre
   strategy: cast
   target: int
-- field: casualty_imd_decile
+- field: vehicle_direction_from
   strategy: enum
-  target: dft.stats19_casualty_imd_decile
-- field: lsoa_of_casualty
+  target: dft.stats19_vehicle_direction_from
+- field: vehicle_direction_to
+  strategy: enum
+  target: dft.stats19_vehicle_direction_to
+- field: vehicle_location_restricted_lane_historic
+  strategy: enum
+  target: dft.stats19_vehicle_location_restricted_lane_historic
+- field: vehicle_location_restricted_lane
+  strategy: enum
+  target: dft.stats19_vehicle_location_restricted_lane
+- field: junction_location
+  strategy: enum
+  target: dft.stats19_junction_location
+- field: skidding_and_overturning
+  strategy: enum
+  target: dft.stats19_skidding_and_overturning
+- field: hit_object_in_carriageway
+  strategy: enum
+  target: dft.stats19_hit_object_in_carriageway
+- field: first_point_of_impact
+  strategy: enum
+  target: dft.stats19_first_point_of_impact
+- field: vehicle_left_hand_drive
+  strategy: enum
+  target: dft.stats19_vehicle_left_hand_drive
+- field: journey_purpose_of_driver_historic
+  strategy: enum
+  target: dft.stats19_journey_purpose_of_driver_historic
+- field: journey_purpose_of_driver
+  strategy: enum
+  target: dft.stats19_journey_purpose_of_driver
+- field: sex_of_driver
+  strategy: enum
+  target: dft.stats19_sex_of_driver
+- field: age_of_driver
+  strategy: cast
+  target: int
+- field: age_band_of_driver
+  strategy: enum
+  target: dft.stats19_age_band_of_driver
+- field: engine_capacity_cc
+  strategy: cast
+  target: int
+- field: propulsion_code
+  strategy: enum
+  target: dft.stats19_propulsion_code
+- field: age_of_vehicle
+  strategy: cast
+  target: int
+- field: generic_make_model
   strategy: cast
   target: text
-- field: enhanced_casualty_severity
+- field: driver_imd_decile
   strategy: enum
-  target: dft.stats19_enhanced_casualty_severity
-- field: casualty_injury_based
-  strategy: cast
-  target: int
-- field: casualty_adjusted_serious
-  strategy: cast
-  target: float8
-- field: casualty_adjusted_slight
-  strategy: cast
-  target: float8
-- field: casualty_distance_banding
+  target: dft.stats19_driver_imd_decile
+- field: driver_distance_banding
   strategy: enum
-  target: dft.stats19_casualty_distance_banding
+  target: dft.stats19_driver_distance_banding

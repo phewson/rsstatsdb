@@ -61,11 +61,13 @@ name_map <- c(
 )
 
 writeLines(build_loading_ddl("stats19_collisions", collision_names, name_map, COLLISION_DATA), con = "import_stats19_collisions.sh")
+Sys.chmod("import_stats19_collisions.sh", mode = "0755")
 writeLines(build_loading_ddl("stats19_casualties", casualty_names, name_map, CASUALTY_DATA),
            con = "import_stats19_casualties.sh")
-
+Sys.chmod("import_stats19_casualties.sh", mode = "0755")
 writeLines(build_loading_ddl("stats19_vehicles", vehicle_names, name_map, VEHICLE_DATA),
            con = "import_stats19_vehicles.sh")
+Sys.chmod("import_stats19_vehicles.sh", mode = "0755")
 
 promote_collisions <- generate_promotion_sql(read_schema_yaml("inst/schemas/stats19_collision.yml"),
                                              build_column_select_sql,
